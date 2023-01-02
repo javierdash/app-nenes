@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {Redirect} from 'react-router-dom'
+import Confetti from 'react-confetti'
 
 const Contador = ({edad}) => {
 
@@ -14,21 +15,22 @@ const Contador = ({edad}) => {
   }
 
   const si = () => {
-  if(contador === edad) {
+  if(contador == edad) {
+    //console.log("Guau! Que grande eres!")
     const igual = "Guau! Que grande eres!"
-    //return igual
-  } else if (contador === contador - 1) {
+    
+    return igual
+  } else if (contador == edad - 1) {
     const casi = "Ya casi llegas!"
-    //return casi
-  } else if (contador === contador + 1) {
-    const pasaste = "Espera! El año que viene cuando cumplas años vas a tener esa edad!"
-    //return pasaste
-  } else if (contador > contador + 1) {
+    return casi
+  } else if (contador > edad) {
     const grande = "Todavía No! Ya vas a crecer :) Por favor disminuye tu edad"
-    //return grande
+    return grande
   }
+  // } else {
+  //   const resto = "FALTA!"
+  // }
   }
-  console.log(si)
 
   return (
     <div>
@@ -42,7 +44,9 @@ const Contador = ({edad}) => {
       {/* <h3>{edad}</h3> */}
       {/* {contador == edad ? <h1>"GANASTE!!!"</h1> : ""}
       {contador > edad ? <h1>"PERDISTE!!!"</h1> : ""} */}
-      <h3>{() => si}</h3>
+      <h3>{si()}</h3>
+      {contador == edad ? <Confetti /> : ""}
+      {/* <Confetti /> */}
     </div>
   )
 }
