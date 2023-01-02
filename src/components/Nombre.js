@@ -1,22 +1,12 @@
-import { useState } from "react"
 import Edad from './Edad'
 import swal from '@sweetalert/with-react'
 import {Redirect} from 'react-router-dom'
 
-const Nombre = () => {
-  
-  const [actualName, setActualName] = useState("");
-
-  const submitHandler = (e) => {
-    e.preventDefault()
-    const nombre = e.target.nombre.value
-    e.target.nombre.value = ""
-    setActualName(nombre)
-    swal(<h2>"tu nombre es genial!"</h2>)
-  }
+const Nombre = ({submitHandler, actualName}) => {
 
   return (
     <>
+    <span>anda?</span>
       <form onSubmit={submitHandler}>
         <label>¿Cuál es tu nombre?</label>
         <br />
@@ -24,11 +14,9 @@ const Nombre = () => {
         <button>enviar</button>
       </form>
       {actualName !== "" && <h2>Hola {actualName}</h2>}
-      {actualName !== "" && <Edad />}
-      {/* <Edad nombre={actualName}/>
-      {actualName !== "" && <Redirect to="/edad" />} */}
+      { actualName !== "" && <Redirect to="/edad"> <Edad nombre="PEPE"/></Redirect> }
     </>
   )
-}
+  }
 
-export default Nombre
+export default Nombre;

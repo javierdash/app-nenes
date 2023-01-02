@@ -19,7 +19,7 @@ const Contador = (props) => {
       {/* <button onClick={restar}>RESTAR</button> */}
       <button onClick={sumar}>click</button>
       {/* <h3>{props.edad}</h3> */}
-      {contador == props.edad ? <h1>"GANASTE!!!"</h1> : ""}
+      {contador === props.edad ? <h1>"GANASTE!!!"</h1> : ""}
       {contador > props.edad ? <h1>"PERDISTE!!!"</h1> : ""}
     </div>
   )

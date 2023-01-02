@@ -1,7 +1,9 @@
 import { useState } from "react"
 import Contador from './Contador'
 
-const Edad = () => {
+const Edad = ({nombre}) => {
+  
+  console.log(nombre)
   
   const [actualEdad, setActualEdad] = useState("");
 
@@ -14,6 +16,7 @@ const Edad = () => {
 
   return (
     <>
+    <span>Hola {nombre}!</span>
       <form onSubmit={submitHandler}>
         <label>¿Cuántos años tenés?</label>
         <br />
