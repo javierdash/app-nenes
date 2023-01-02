@@ -1,31 +1,21 @@
-import { useState } from "react"
 import Contador from './Contador'
+import {Redirect} from 'react-router-dom'
 
-const Edad = ({nombre}) => {
+const Edad = ({nombre, submitEdad, edad}) => {
   
-  console.log(nombre)
-  
-  const [actualEdad, setActualEdad] = useState("");
-
-  const submitHandler = (e) => {
-    e.preventDefault()
-    const edad = e.target.edad.value
-    e.target.edad.value = ""
-    setActualEdad(edad)
-  }
+  console.log(edad)
 
   return (
     <>
+    {!nombre && <Redirect to="/" />}
     <span>Hola {nombre}!</span>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitEdad}>
         <label>¿Cuántos años tenés?</label>
         <br />
         <input type="text" name="edad" placeholder="Ingresá tu edad"></input>
         <button>enviar</button>
-        {actualEdad !== "" && <h2>Tenés {actualEdad} años!</h2>}
       </form>
-      {actualEdad !== "" && <h3>Apretá el botón hasta llegar a tu edad</h3>}
-      {actualEdad !== "" && <Contador edad={actualEdad} />}
+      {/* {edad && <Redirect to="/contador" />} */}
     </>
   )
 }

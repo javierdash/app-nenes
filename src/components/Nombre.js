@@ -2,19 +2,19 @@ import Edad from './Edad'
 import swal from '@sweetalert/with-react'
 import {Redirect} from 'react-router-dom'
 
-const Nombre = ({submitHandler, actualName}) => {
+const Nombre = ({submitNombre, nombre}) => {
+  
 
   return (
     <>
-    <span>anda?</span>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitNombre}>
         <label>¿Cuál es tu nombre?</label>
         <br />
         <input type="text" name="nombre" placeholder="Ingresá tu nombre aquí"></input>
         <button>enviar</button>
       </form>
-      {actualName !== "" && <h2>Hola {actualName}</h2>}
-      { actualName !== "" && <Redirect to="/edad"> <Edad nombre="PEPE"/></Redirect> }
+      {/* {nombre !== "" && <h2>Hola {nombre}</h2>} */}
+      {/* {nombre && <Redirect to="/edad" />} */}
     </>
   )
   }
