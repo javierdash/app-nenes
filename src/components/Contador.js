@@ -15,10 +15,11 @@ const Contador = ({edad}) => {
   }
 
   const si = () => {
-  if(contador == edad) {
-    //console.log("Guau! Que grande eres!")
-    const igual = "Guau! Que grande eres!"
-    
+    if(contador == (edad - 2)) {
+      const igual = "Falta menos.."    
+      return igual
+    } else if(contador == edad) {
+    const igual = "Guau! Que grande sos!"    
     return igual
   } else if (contador == edad - 1) {
     const casi = "Ya casi llegas!"
@@ -39,8 +40,8 @@ const Contador = ({edad}) => {
       <h3>Apretá el botón hasta llegar a tu edad</h3>
       <h3>{contador}</h3>
       {/* <button onClick={restar}>RESTAR</button> */}
-      <button onClick={restar}>restá 1 año!</button>
-      <button onClick={sumar}>sumá 1 año!</button>
+      {contador > edad && <button onClick={restar} className="btn btn-warning">restá 1 año!</button>}
+      <button onClick={sumar} className="btn btn-success">sumá 1 año!</button>
       {/* <h3>{edad}</h3> */}
       {/* {contador == edad ? <h1>"GANASTE!!!"</h1> : ""}
       {contador > edad ? <h1>"PERDISTE!!!"</h1> : ""} */}

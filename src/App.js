@@ -5,6 +5,7 @@ import {Switch, Route, useHistory} from 'react-router-dom'
 import { useState, useEffect } from "react"
 import swal from '@sweetalert/with-react'
 import {Redirect} from 'react-router-dom'
+import "./estilos.css"
 
 function App() {
   

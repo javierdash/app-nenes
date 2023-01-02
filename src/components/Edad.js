@@ -8,12 +8,12 @@ const Edad = ({nombre, submitEdad, edad}) => {
   return (
     <>
     {!nombre && <Redirect to="/" />}
-    <span>Hola {nombre}!</span>
-      <form onSubmit={submitEdad}>
-        <label>¿Cuántos años tenés?</label>
+    <h3>Hola {nombre}!</h3>
+      <form className="form-nombre" onSubmit={submitEdad}>
+        <h2>¿Cuántos años tenés?</h2>
         <br />
-        <input type="text" name="edad" placeholder="Ingresá tu edad"></input>
-        <button>enviar</button>
+        <input className="input" type="text" name="edad" placeholder="Ingresá tu edad"></input>
+        <br/><button className="btn btn-primary">enviar</button>
       </form>
       {/* {edad && <Redirect to="/contador" />} */}
     </>
